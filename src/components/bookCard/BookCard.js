@@ -22,16 +22,18 @@ class BookCard extends Component {
   toggleRenderDescription() {
     this.setState({ ...this.state, ...{ renderDescription: !this.state.renderDescription } });
   }
-  
+  // col-md-6 col-lg-4
   render() {
     return(
-      <div className="card-container">
-        <img className="book-card-image" src={this.props.book.image} alt=""></img>
-        <div>
+      <div className="card-container row">
+        <div className="col-lg-2 col-md-3 col-sm-12">
+          <img className="book-card-image" src={this.props.book.image} alt=""></img>
+        </div>
+        <div className="col-lg-10 col-md-8 col-sm-12">
           <h1 className="text">{this.props.book.title}</h1>
+          {this.showBookDescriptionCard()}
           <button className="book-card-button btn-lg btn-block" onClick={() => {this.toggleRenderDescription()}}>{this.state.buttonIcon}</button>
           <button className="book-card-button btn-lg btn-block" onClick={() => bookService.addFavoriteBook(this.props.book)}>⭐️</button>
-          {this.showBookDescriptionCard()}
         </div>
       </div>
     )

@@ -9,10 +9,10 @@
 
 .book-card-image {
     display: block;
-    margin-left: auto;
-    margin-right: 15px;
     margin-bottom: 15px;
-    float: left;
+    margin-left: auto;
+    margin-right: auto;
+    width: 6em
 }
 
 .book-card-button {
