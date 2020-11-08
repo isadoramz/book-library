@@ -40,9 +40,9 @@ class Books extends Component {
         <SearchBox keyWordHandler={this.setKeyWord} />
         <BookList books={this.state.books} />
           <div className="books-card-pagination">
-            <button className="button-pagination" conClick={() => this.setPageIndex(this.pageIndex - 1)}>previous</button>
+            <button className="button-pagination" onClick={() => this.setPageIndex(this.pageIndex - 1)}>←</button>
             <button className="button-pagination"> {this.pageIndex + 1}</button>
-            <button className="button-pagination" onClick={() => this.setPageIndex(this.pageIndex + 1)}>next</button>
+            <button className="button-pagination" onClick={() => this.setPageIndex(this.pageIndex + 1)}>→</button>
           </div>
         </div>
     );
