@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import BookList from '../bookList/BookList';
+import SearchBox from '../searchBox/SearchBox';
 import { booksService } from '../../services';
-
-const keyWord = "dogs";
 
 class Books extends Component {
   constructor(props) {
@@ -13,15 +12,18 @@ class Books extends Component {
     }
   }
 
-  componentDidMount() {
+  searchBooksByKeyword = (keyWord) => {
     booksService.getBooksByKeyWord(keyWord).then((returnedBooks) => {
       this.setState({ ...this.state, ...{ books: returnedBooks } });
-    });
+   });
   }
 
   render() {
     return (
-      <BookList books={this.state.books} />
+      <div>
+        <SearchBox searchHandler={this.searchBooksByKeyword} />
+        <BookList books={this.state.books} />
+      </div>
     );
   }
 }
