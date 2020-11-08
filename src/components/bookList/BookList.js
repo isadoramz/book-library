@@ -2,7 +2,7 @@ import React from 'react';
 import BookCard from '../bookCard/BookCard'
 
 const BookList = (props) => (
-  <div className="container">
+  <div>
     <div className="row">
     {
       props.books.map((book, i) => (
