@@ -1,0 +1,31 @@
+.card-container {
+    width: 350x;
+    border: 1.5px solid rgba(0,0,0,.125);
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 5px;
+    color: #4d4b4b;
+}
+
+.book-card-image {
+    display: block;
+    margin-left: auto;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    float: left;
+}
+
+.book-card-button {
+    background-color: #f6f6f6;
+    color: #4d4b4b;
+    font-size: 16px;
+    padding: 10px 15px 10px 15px;
+    border: none;
+    border-radius: 2px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.text {
+    font-size: 20px;
+}
