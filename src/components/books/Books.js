@@ -1,17 +1,29 @@
-import React from 'react';
-import BookList from '../bookList/BookList'
+import React, { Component } from 'react';
+import BookList from '../bookList/BookList';
+import { booksService } from '../../services';
 
-const books = [
-  {
-    title: "O Pequeno Príncipe"
-  },
-  {
-    title: "O Pequeno Príncipe 2"
+const keyWord = "dogs";
+
+class Books extends Component {
+  constructor(props) {
+    super(props);
+    
+    this.state = {
+      books: []
+    }
   }
-];
 
-const Books = () => (
-  <BookList books={books} />
-);
+  componentDidMount() {
+    booksService.getBooksByKeyWord(keyWord).then((returnedBooks) => {
+      this.setState({ ...this.state, ...{ books: returnedBooks } });
+    });
+  }
+
+  render() {
+    return (
+      <BookList books={this.state.books} />
+    );
+  }
+}
 
 export default Books;
