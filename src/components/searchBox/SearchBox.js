@@ -9,7 +9,7 @@ function SearchBox(props) {
     <div className="search-box">
       <div>
         <input className="input-search" onChange={e => {searchFieldValue = e.target.value}} type="text"></input>
-        <button className="input-button" onClick={() => props.keyWordHandler(searchFieldValue)}> Search</button>
+        <button className="input-button" onClick={() => props.keyWordHandler(searchFieldValue)}>Search</button>
       </div>
     </div>
   );

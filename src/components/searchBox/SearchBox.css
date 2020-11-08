@@ -17,13 +17,14 @@
 }
 
 .input-button {
-    background-color: #4d4b4b;
-    color: #f6f6f6;
+    background-color: #f6f6f6;
+    color: #4d4b4b;
     font-size: 16px;
-    width: 80px;
-    height: 35px;
+    width: 95px;
+    height: 45px;
     border: none;
     border-radius: 2px;
+    font-weight: 500;
 }
 
 label {
