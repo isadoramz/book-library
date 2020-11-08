@@ -1,9 +1,10 @@
 import { Books } from './components';
+import { Header } from './components';
 
 function App() {
   return (
     <div className="App">
-      <h1>Book Library</h1>
+      <Header />
       <Books />
     </div>
   );
