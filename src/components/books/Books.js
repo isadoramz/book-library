@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import BookList from '../bookList/BookList';
 import SearchBox from '../searchBox/SearchBox';
 import { booksService } from '../../services';
+import './Books.css'
 
 class Books extends Component {
 
@@ -35,15 +36,15 @@ class Books extends Component {
 
   render() {
     return (
-      <div>
+      <div  className="container">
         <SearchBox keyWordHandler={this.setKeyWord} />
-        <div>
-          <p onClick={() => this.setPageIndex(this.pageIndex - 1)}>previous</p>
-          <p>{this.pageIndex + 1}</p>
-          <p onClick={() => this.setPageIndex(this.pageIndex + 1)}>next</p>
-        </div>
         <BookList books={this.state.books} />
-      </div>
+          <div className="books-card-pagination">
+            <button className="button-pagination" conClick={() => this.setPageIndex(this.pageIndex - 1)}>previous</button>
+            <button className="button-pagination"> {this.pageIndex + 1}</button>
+            <button className="button-pagination" onClick={() => this.setPageIndex(this.pageIndex + 1)}>next</button>
+          </div>
+        </div>
     );
   }
 }

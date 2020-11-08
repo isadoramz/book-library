@@ -1,0 +1,16 @@
+.books-card-pagination {
+  text-align: center;
+}
+
+.button-pagination {
+  background-color: #f6f6f6;
+  color: #4d4b4b;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 10px 15px 10px 15px;
+  border: none;
+  border-radius: 2px;
+  margin: 25px;
+  width: 95px;
+  height: 45px;
+}
