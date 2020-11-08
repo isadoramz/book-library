@@ -1,0 +1,32 @@
+.search-box {
+    margin: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.input-search {
+    margin: 20px;
+    width: 200px;
+    height: 30px;
+    border-radius: 5px;
+    border-width: 1px;
+    border-color: #4d4b4b;
+}
+
+.input-button {
+    background-color: #4d4b4b;
+    color: #f6f6f6;
+    font-size: 16px;
+    width: 80px;
+    height: 35px;
+    border: none;
+    border-radius: 2px;
+}
+
+label {
+    color: #4d4b4b;
+    font-weight: bold;
+}
