@@ -4,7 +4,7 @@ const booksService = {
   async getBooksByKeyWord(keyWord, pageIndex = 0) {
     const response = await request
       .get("https://www.googleapis.com/books/v1/volumes")
-      .query({ q: keyWord, startIndex: pageIndex * 10, maxResults: 10 });
+      .query({ q: keyWord, startIndex: pageIndex * 4, maxResults: 4 });
 
     const books = response.body.items;
 
