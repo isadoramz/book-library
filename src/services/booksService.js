@@ -10,6 +10,7 @@ const booksService = {
 
     return books.map((book) => {
       return {
+        id: book.id,
         title: book.volumeInfo.title,
         image: book.volumeInfo.imageLinks.thumbnail,
         author: book.volumeInfo.authors,
@@ -17,7 +18,29 @@ const booksService = {
         description: book.volumeInfo.description
       };
     })
-  }
-}
+  },
 
+  setFavoriteBooks(books) {
+    window.localStorage.setItem("favoriteBooks", JSON.stringify(books));
+  },
+  
+  getFavoriteBooks() {
+    const value = JSON.parse(window.localStorage.getItem("favoriteBooks")) 
+    return value || [];
+  },
+
+  addFavoriteBook(book) {
+    let favoriteBooks = this.getFavoriteBooks();
+
+    if(!favoriteBooks) {
+      favoriteBooks = [];
+    }
+
+    if(favoriteBooks.filter(b => book.id === b.id).length === 0) {
+      favoriteBooks.push(book);
+      this.setFavoriteBooks(favoriteBooks);
+    }
+  }
+
+}
 export default booksService;
