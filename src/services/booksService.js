@@ -1,10 +1,10 @@
 import request from 'superagent';
 
 const booksService = {
-  async getBooksByKeyWord(keyWord) {
+  async getBooksByKeyWord(keyWord, pageIndex = 0) {
     const response = await request
       .get("https://www.googleapis.com/books/v1/volumes")
-      .query({ q: keyWord });
+      .query({ q: keyWord, startIndex: pageIndex * 10, maxResults: 10 });
 
     const books = response.body.items;
 
