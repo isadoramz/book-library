@@ -39,6 +39,9 @@ const booksService = {
     if(favoriteBooks.filter(b => book.id === b.id).length === 0) {
       favoriteBooks.push(book);
       this.setFavoriteBooks(favoriteBooks);
+      alert('Book marked as favorite!')
+    } else {
+      alert('This book is already marked as favorite!')
     }
   }
 
