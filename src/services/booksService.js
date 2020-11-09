@@ -23,9 +23,9 @@ const booksService = {
   setFavoriteBooks(books) {
     window.localStorage.setItem("favoriteBooks", JSON.stringify(books));
   },
-  
+
   getFavoriteBooks() {
-    const value = JSON.parse(window.localStorage.getItem("favoriteBooks")) 
+    const value = JSON.parse(window.localStorage.getItem("favoriteBooks"));
     return value || [];
   },
 
@@ -39,9 +39,9 @@ const booksService = {
     if(favoriteBooks.filter(b => book.id === b.id).length === 0) {
       favoriteBooks.push(book);
       this.setFavoriteBooks(favoriteBooks);
-      alert('Book marked as favorite!')
+      alert('Book marked as favorite!');
     } else {
-      alert('This book is already marked as favorite!')
+      alert('This book is already marked as favorite!');
     }
   }
 

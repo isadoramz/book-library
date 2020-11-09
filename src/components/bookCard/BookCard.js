@@ -4,7 +4,7 @@ import BookDescriptionCard from '../bookDescriptionCard/BookDescriptionCard'
 import './BookCard.css'
 
 class BookCard extends Component {
-  
+
   constructor(props) {
     super(props);
     this.state = {
@@ -26,9 +26,9 @@ class BookCard extends Component {
 
   toggleDescriptionButtonIcon() {
     if(this.buttonIcon === "➕") {
-      this.buttonIcon = "➖"
+      this.buttonIcon = "➖";
     } else if (this.buttonIcon === "➖") {
-      this.buttonIcon = "➕"
+      this.buttonIcon = "➕";
     }
   }
 
