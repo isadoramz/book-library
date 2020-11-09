@@ -8,10 +8,11 @@ class BookCard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      renderDescription: false,
-      buttonIcon: "➕"
+      renderDescription: false
     }
   }
+
+  buttonIcon = "➕";
 
   showBookDescriptionCard() {
     if(this.state.renderDescription) {
@@ -22,7 +23,15 @@ class BookCard extends Component {
   toggleRenderDescription() {
     this.setState({ ...this.state, ...{ renderDescription: !this.state.renderDescription } });
   }
-  // col-md-6 col-lg-4
+
+  toggleDescriptionButtonIcon() {
+    if(this.buttonIcon === "➕") {
+      this.buttonIcon = "➖"
+    } else if (this.buttonIcon === "➖") {
+      this.buttonIcon = "➕"
+    }
+  }
+
   render() {
     return(
       <div className="card-container row">
@@ -32,7 +41,7 @@ class BookCard extends Component {
         <div className="col-lg-10 col-md-8 col-sm-12">
           <h1 className="text">{this.props.book.title}</h1>
           {this.showBookDescriptionCard()}
-          <button className="book-card-button btn-lg btn-block" onClick={() => {this.toggleRenderDescription()}}>{this.state.buttonIcon}</button>
+          <button className="book-card-button btn-lg btn-block" onClick={() => {this.toggleRenderDescription(); this.toggleDescriptionButtonIcon()}}>{this.buttonIcon}</button>
           <button className="book-card-button btn-lg btn-block" onClick={() => bookService.addFavoriteBook(this.props.book)}>⭐️</button>
         </div>
       </div>
