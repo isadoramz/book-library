@@ -6,7 +6,7 @@ const BookList = (props) => (
     <div className="">
     {
       props.books.map((book, i) => (
-        <div className="">
+        <div key={i} className="">
            <BookCard book={book}/>
         </div>
       ))
